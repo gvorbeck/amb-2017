@@ -1,0 +1,82 @@
+.book {
+  background: white;
+  box-shadow: $shadow2;
+  display: inline-block;
+  padding: .625em;
+  position: relative;
+
+  &--title {
+    font-size: 2em;
+  }
+
+  &--cover {
+    box-shadow: $shadow2;
+  }
+
+  &--details {
+    float: right;
+    margin: 0 0 0 .625rem;
+    max-width: 300px;
+  }
+
+  &--author-info {
+
+    li {
+      display: flex;
+
+      & + li {
+        margin-top: .625rem;
+      }
+    }
+
+    h4 {
+      line-height: 2.188rem;
+    }
+  }
+
+  &--tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 10px;
+    margin-top: 10px;
+    font-size: em(12px);
+
+    li {
+      background: $color2;
+      color: white;
+      position: relative;
+      border-radius: 0 5% 5% 0;
+      margin: 0 em(20px) em(10px) 0;
+      padding: em(5px) em(10px) em(6px);
+      line-height: em(20px);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: em(-10px);
+        border-top: em(16px) solid transparent;
+        border-right: em(10px) solid $color2;
+        border-bottom: em(15px) solid transparent;
+      }
+    }
+  }
+
+  &--controls {
+
+    svg {
+      width: 25px;
+      height: 25px;
+      fill: $color1;
+    }
+  }
+}
+
+.author-cropper {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+}

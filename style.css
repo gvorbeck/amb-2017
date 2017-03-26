@@ -1,0 +1,165 @@
+/*
+Theme Name: AMB 2017
+Author: JGV
+Description: 2017 AMB theme
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Coolors Exported Palette - coolors.co/d2dec7-b8ae94-a1685e-5e7389-454b59 */
+/* HSL */
+/* Shadows */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  line-height: 1.375em; }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.08em; }
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em; }
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em; }
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.222em; }
+
+button {
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0; }
+
+/* ----- ----- ----- ----- ----- */
+body {
+  background: #246e99; }
+
+#site-header {
+  background: #343735;
+  height: 22.1875em;
+  box-shadow: 0 0.0625em 0.1875em rgba(0, 0, 0, 0.12), 0 0.0625em 0.125em rgba(0, 0, 0, 0.24); }
+
+main {
+  min-height: 10px;
+  width: 62.5em;
+  background: #f0f0f0;
+  margin: -6.25em auto 0;
+  padding: 1.25em;
+  position: relative;
+  box-shadow: 0 0.1875em 0.375em rgba(0, 0, 0, 0.16), 0 0.1875em 0.375em rgba(0, 0, 0, 0.23);
+  box-sizing: border-box; }
+
+#site-footer {
+  background: #343735;
+  padding: 6.25em 0 5.9375em;
+  margin: -6.25em 0 0; }
+
+.book {
+  background: white;
+  box-shadow: 0 0.1875em 0.375em rgba(0, 0, 0, 0.16), 0 0.1875em 0.375em rgba(0, 0, 0, 0.23);
+  display: inline-block;
+  padding: .625em;
+  position: relative; }
+  .book--title {
+    font-size: 2em; }
+  .book--cover {
+    box-shadow: 0 0.1875em 0.375em rgba(0, 0, 0, 0.16), 0 0.1875em 0.375em rgba(0, 0, 0, 0.23); }
+  .book--details {
+    float: right;
+    margin: 0 0 0 .625rem;
+    max-width: 300px; }
+  .book--author-info li {
+    display: flex; }
+    .book--author-info li + li {
+      margin-top: .625rem; }
+  .book--author-info h4 {
+    line-height: 2.188rem; }
+  .book--tags {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 0 10px;
+    margin-top: 10px;
+    font-size: 0.75em; }
+    .book--tags li {
+      background: #f24236;
+      color: white;
+      position: relative;
+      border-radius: 0 5% 5% 0;
+      margin: 0 1.25em 0.625em 0;
+      padding: 0.3125em 0.625em 0.375em;
+      line-height: 1.25em; }
+      .book--tags li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -0.625em;
+        border-top: 1em solid transparent;
+        border-right: 0.625em solid #f24236;
+        border-bottom: 0.9375em solid transparent; }
+  .book--controls svg {
+    width: 25px;
+    height: 25px;
+    fill: #246e99; }
+
+.author-cropper {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 10px 0 0; }
+
+/*# sourceMappingURL=style.css.map */

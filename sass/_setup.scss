@@ -1,0 +1,61 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: em(16);
+  line-height: 1.375em;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.08em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.222em;
+}
+
+button {
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ----- ----- ----- ----- ----- */
+body {
+  background: $color1;
+}
+
+#site-header {
+  background: $color5;
+  height: em(355px);
+  box-shadow: $shadow1;
+}
+
+main {
+  min-height: 10px;
+  width: em(1000px);
+  background: $color4;
+  margin: em(-100px) auto 0;
+  padding: em(20px);
+  position: relative;
+  box-shadow: $shadow2;
+  box-sizing: border-box;
+}
+
+#site-footer {
+  background: $color5;
+  padding: em(100px) 0 em(95px);
+  margin: em(-100px) 0 0;
+}
