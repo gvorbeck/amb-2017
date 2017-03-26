@@ -12,10 +12,8 @@
   if ( $query->have_posts() ) :
     // Start the loop
     while ( $query->have_posts() ) : $query->the_post();
-      $json_url = "http://openlibrary.org/api/volumes/brief/isbn/" . get_field('isbn') . ".json";
-      $json = file_get_contents($json_url);
-      $data = json_decode($json, TRUE);
-      amb_book_card($data[records][array_keys($data[records])[0]]);
+      $data = json_decode(file_get_contents("https://openlibrary.org/api/books?bibkeys=ISBN:" . get_field('isbn') . "&jscmd=data&format=json"), TRUE);
+      amb_book_card($data['ISBN:' . get_field('isbn')]);
     // End the loop
     endwhile;
   else:
@@ -24,12 +22,13 @@
   wp_reset_postdata();
 
   // delete after dev
-  $json_url = "http://openlibrary.org/api/volumes/brief/isbn/0771008139.json";
+$json_url = 'https://openlibrary.org/api/books?bibkeys=ISBN:9780345509680&jscmd=data&format=json';
+  //$json_url = "http://openlibrary.org/api/volumes/brief/isbn/0771008139.json";
   $json = file_get_contents($json_url);
   $data = json_decode($json, TRUE);
-  echo "<!--pre>";
+  echo "<pre>";
   print_r($data);
-  echo "</pre-->";
+  echo "</pre>";
   // delete after dev
   ?>
 </ul>

@@ -81,7 +81,8 @@ button {
   border: none;
   text-align: left;
   cursor: pointer;
-  padding: 0; }
+  padding: 0;
+  outline: none; }
 
 /* ----- ----- ----- ----- ----- */
 body {
@@ -114,13 +115,23 @@ main {
   padding: .625em;
   position: relative; }
   .book--title {
-    font-size: 2em; }
+    font-size: 2em;
+    font-family: 'Bree Serif', serif;
+    line-height: 1em;
+    background: #f24236;
+    margin: 0 0 0.3125em;
+    padding: 0.3125em;
+    box-shadow: 0 0.0625em 0.1875em rgba(0, 0, 0, 0.12), 0 0.0625em 0.125em rgba(0, 0, 0, 0.24);
+    color: white;
+    text-transform: capitalize; }
   .book--cover {
-    box-shadow: 0 0.1875em 0.375em rgba(0, 0, 0, 0.16), 0 0.1875em 0.375em rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 0.625em 1.25em rgba(0, 0, 0, 0.19), 0 0.375em 0.375em rgba(0, 0, 0, 0.23); }
   .book--details {
     float: right;
     margin: 0 0 0 .625rem;
-    max-width: 300px; }
+    max-width: 300px;
+    position: relative;
+    padding-bottom: 1.9375em; }
   .book--author-info li {
     display: flex; }
     .book--author-info li + li {
@@ -145,14 +156,20 @@ main {
         content: '';
         position: absolute;
         top: 0;
-        left: -0.625em;
+        left: -7px;
         border-top: 1em solid transparent;
         border-right: 0.625em solid #f24236;
         border-bottom: 0.9375em solid transparent; }
-  .book--controls svg {
-    width: 25px;
-    height: 25px;
-    fill: #246e99; }
+  .book button + button {
+    margin-left: 0.625em; }
+  .book--controls {
+    position: absolute;
+    bottom: 0.625em;
+    right: 0.625em; }
+    .book--controls svg {
+      width: 25px;
+      height: 25px;
+      fill: #246e99; }
 
 .author-cropper {
   width: 35px;

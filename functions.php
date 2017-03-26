@@ -106,46 +106,68 @@ function is_login_page() {
 
 if (!is_admin() && !is_login_page()) {
   // Enqueue Styles
+  wp_register_style( 'fonts', 'https://fonts.googleapis.com/css?family=Bree+Serif|Source+Sans+Pro' );
   wp_enqueue_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_style( 'fonts', get_stylesheet_uri() );
 }
 
 // Book card html
-function amb_book_card($book) {
-  ?>
+function amb_book_card($book) { ?>
+  <?php var_dump($book); ?>
   <li class="book book-full">
-    <h3 class="book--title"><?php the_title(); ?></h3>
-    <img class="book--cover" src="<?php echo $book[data][cover][medium]; ?>">
+    <h3 class="book--title"><a href="<?php echo $book[url]; ?>">
+      <?php if (isset($book[title])) :
+        echo $book[title];
+      else:
+          the_title();
+      endif; ?>
+    </a></h3>
+    <span class="book--isbn" style="display: none;"><?php the_field('isbn'); ?></span>
+    <?php if (isset($book[cover][medium])) : ?>
+      <img alt="book cover" class="book--cover" src="<?php echo $book[cover][medium]; ?>">
+    <?php endif; ?>
     <div class="book--details">
-      <ul class="book--author-info">
-        <?php
-        $authors = $book[details][details][authors];
-        for ($i = 0; $i < count($authors); $i++) : ?>
-          <li>
-            <div class="author-cropper">
-              <?php $author_id = explode("/", $authors[$i][key]); ?>
-              <img src="http://covers.openlibrary.org/a/olid/<?php echo $author_id[2]; ?>-S.jpg">
-            </div>
-            <h4 class="book--author-name"><?php echo $authors[$i][name]; ?></h4>
-          </li>
-        <?php endfor; ?>
-      </ul>
-      <ul class="book--tags">
-        <?php for ($i = 0; $i < count($book[data][subjects]); $i++) : ?>
-          <li><?php echo $book[data][subjects][$i][name]; ?></li>
-        <?php endfor; ?>
-      </ul>
-      <div class="book--controls">
-        <button class="stop-reading">
-          <svg class="icon">
-            <use xlink:href="#clock" />
-          </svg>
-        </button>
-        <button class="done-reading">
-          <svg class="icon">
-            <use xlink:href="#check" />
-          </svg>
-      </div>
+      <?php if (isset($book[authors])) : ?>
+        <ul class="book--author-info">
+          <?php for ($i = 0; $i < count($book[authors]); $i++) : ?>
+            <li>
+              <div class="author-cropper">
+                <img alt="author portrait" src="http://covers.openlibrary.org/a/olid/<?php echo explode('/', trim(parse_url($book[authors][$i][url])[path]))[2]; ?>-S.jpg">
+              </div>
+              <h4 class="book--author-name"><?php echo $book[authors][$i][name]; ?></h4>
+            </li>
+          <?php endfor; ?>
+        </ul>
+      <?php endif; ?>
+      <dl class="book--info">
+        <?php if (isset($book[publish_date])) : ?>
+          <dt>published</dt>
+          <dd><?php echo $book[publish_date]; ?></dd>
+        <?php endif; ?>
+        <?php if (isset($book[number_of_pages])) : ?>
+          <dt>pages</dt>
+          <dd><?php echo $book[number_of_pages]; ?></dd>
+        <?php endif; ?>
+      </dl>
+      <?php if (isset($book[subjects])) : ?>
+        <ul class="book--tags">
+          <?php for ($i = 0; $i < count($book[subjects]); $i++) : ?>
+            <li><?php echo $book[subjects][$i][name]; ?></li>
+          <?php endfor; ?>
+        </ul>
+      <?php endif; ?>
+    </div>
+    <div class="book--controls">
+      <button class="stop-reading">
+        <svg class="icon">
+          <use xlink:href="#clock" />
+        </svg>
+      </button>
+      <button class="done-reading">
+        <svg class="icon">
+          <use xlink:href="#check" />
+        </svg>
+      </button>
     </div>
   </li>
-  <?php
-}
+<?php }
