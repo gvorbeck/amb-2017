@@ -15,6 +15,11 @@
     box-shadow: $shadow1;
     color: white;
     text-transform: capitalize;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
   }
 
   &--cover {
@@ -26,7 +31,7 @@
     margin: 0 0 0 .625rem;
     max-width: 300px;
     position: relative;
-    padding-bottom: em(31px);
+    padding-bottom: em(41px);
   }
 
   &--author-info {
@@ -41,6 +46,22 @@
 
     h4 {
       line-height: 2.188rem;
+    }
+
+    a {
+      color: $color5;
+      text-decoration: none;
+    }
+  }
+
+  &--info {
+    margin: 10px 0 0 10px;
+
+    dt {
+      float: left;
+      clear: left;
+      font-weight: bold;
+      margin-right: em(5px);
     }
   }
 
@@ -68,6 +89,24 @@
         border-top: em(16px) solid transparent;
         border-right: em(10px) solid $color2;
         border-bottom: em(15px) solid transparent;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--links {
+    margin-left: 10px;
+
+    a {
+      color: $color1;
+      font-size: em(12px);
+
+      & + a:before {
+        content: ', ';
       }
     }
   }

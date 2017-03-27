@@ -113,7 +113,6 @@ if (!is_admin() && !is_login_page()) {
 
 // Book card html
 function amb_book_card($book) { ?>
-  <?php var_dump($book); ?>
   <li class="book book-full">
     <h3 class="book--title"><a href="<?php echo $book[url]; ?>">
       <?php if (isset($book[title])) :
@@ -134,7 +133,11 @@ function amb_book_card($book) { ?>
               <div class="author-cropper">
                 <img alt="author portrait" src="http://covers.openlibrary.org/a/olid/<?php echo explode('/', trim(parse_url($book[authors][$i][url])[path]))[2]; ?>-S.jpg">
               </div>
-              <h4 class="book--author-name"><?php echo $book[authors][$i][name]; ?></h4>
+              <h4 class="book--author-name">
+                <a href="<?php echo $book[authors][$i][url]; ?>">
+                  <?php echo $book[authors][$i][name]; ?>
+                </a>
+              </h4>
             </li>
           <?php endfor; ?>
         </ul>
@@ -152,7 +155,22 @@ function amb_book_card($book) { ?>
       <?php if (isset($book[subjects])) : ?>
         <ul class="book--tags">
           <?php for ($i = 0; $i < count($book[subjects]); $i++) : ?>
-            <li><?php echo $book[subjects][$i][name]; ?></li>
+            <li>
+              <a href="<?php echo $book[subjects][$i][url]; ?>" target="_blank">
+                <?php echo $book[subjects][$i][name]; ?>
+              </a>
+            </li>
+          <?php endfor; ?>
+        </ul>
+      <?php endif;
+      if (isset($book[links])) : ?>
+        <ul class="book--links">
+          <?php for ($i = 0; $i < count($book[links]); $i++) : ?>
+            <li>
+              <a href="<?php echo $book[links][$i][url]; ?>" target="_blank">
+                <?php echo $book[links][$i][title]; ?>
+              </a>
+            </li>
           <?php endfor; ?>
         </ul>
       <?php endif; ?>

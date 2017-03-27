@@ -22,13 +22,13 @@
   wp_reset_postdata();
 
   // delete after dev
-$json_url = 'https://openlibrary.org/api/books?bibkeys=ISBN:9780345509680&jscmd=data&format=json';
-  //$json_url = "http://openlibrary.org/api/volumes/brief/isbn/0771008139.json";
-  $json = file_get_contents($json_url);
-  $data = json_decode($json, TRUE);
-  echo "<pre>";
-  print_r($data);
-  echo "</pre>";
+// $json_url = 'https://openlibrary.org/api/books?bibkeys=ISBN:9780345509680&jscmd=data&format=json';
+//   //$json_url = "http://openlibrary.org/api/volumes/brief/isbn/0771008139.json";
+//   $json = file_get_contents($json_url);
+//   $data = json_decode($json, TRUE);
+//   echo "<pre>";
+//   print_r($data);
+//   echo "</pre>";
   // delete after dev
   ?>
 </ul>

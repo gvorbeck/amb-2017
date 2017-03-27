@@ -58,7 +58,8 @@ table {
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
-  line-height: 1.375em; }
+  line-height: 1.375em;
+  color: #343735; }
 
 h1 {
   font-size: 3em;
@@ -124,6 +125,9 @@ main {
     box-shadow: 0 0.0625em 0.1875em rgba(0, 0, 0, 0.12), 0 0.0625em 0.125em rgba(0, 0, 0, 0.24);
     color: white;
     text-transform: capitalize; }
+    .book--title a {
+      color: white;
+      text-decoration: none; }
   .book--cover {
     box-shadow: 0 0.625em 1.25em rgba(0, 0, 0, 0.19), 0 0.375em 0.375em rgba(0, 0, 0, 0.23); }
   .book--details {
@@ -131,13 +135,23 @@ main {
     margin: 0 0 0 .625rem;
     max-width: 300px;
     position: relative;
-    padding-bottom: 1.9375em; }
+    padding-bottom: 2.5625em; }
   .book--author-info li {
     display: flex; }
     .book--author-info li + li {
       margin-top: .625rem; }
   .book--author-info h4 {
     line-height: 2.188rem; }
+  .book--author-info a {
+    color: #343735;
+    text-decoration: none; }
+  .book--info {
+    margin: 10px 0 0 10px; }
+    .book--info dt {
+      float: left;
+      clear: left;
+      font-weight: bold;
+      margin-right: 0.3125em; }
   .book--tags {
     display: flex;
     flex-wrap: wrap;
@@ -160,6 +174,16 @@ main {
         border-top: 1em solid transparent;
         border-right: 0.625em solid #f24236;
         border-bottom: 0.9375em solid transparent; }
+      .book--tags li a {
+        color: white;
+        text-decoration: none; }
+  .book--links {
+    margin-left: 10px; }
+    .book--links a {
+      color: #246e99;
+      font-size: 0.75em; }
+      .book--links a + a:before {
+        content: ', '; }
   .book button + button {
     margin-left: 0.625em; }
   .book--controls {
